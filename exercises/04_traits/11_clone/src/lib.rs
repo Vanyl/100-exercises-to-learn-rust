@@ -2,9 +2,12 @@
 //  to get the code to compile.
 
 pub fn summary(ticket: Ticket) -> (Ticket, Summary) {
-    (ticket, ticket.summary())
+    (ticket.clone(), ticket.summary())
 }
 
+//To make a type Clone-able, we have to implement the Clone trait for it.
+//You almost always implement Clone by deriving it
+#[derive(Clone)]
 pub struct Ticket {
     pub title: String,
     pub description: String,
